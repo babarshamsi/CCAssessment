@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestSubmission</string>
+    <string name="ok">Okay</string>
+    <string name="enable_location">please enable your location</string>
+    <string name="gps_not_enabled">your GPS not enabled</string>
+    <string name="next">Next</string>
+    <string name="no_internet_connection">No Internet Available</string>
+    <string name="internet_connection_title">Network Error</string>
+</resources>
