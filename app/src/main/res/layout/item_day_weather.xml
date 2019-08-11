@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/unit_100"
+    android:layout_height="@dimen/unit_100"
+    android:gravity="center" >
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mon"
+        android:textAllCaps="true"
+        android:maxLength="3"
+        android:textColor="@color/colorBlack"/>
+
+    <ImageView
+        android:id="@+id/iv_weather"
+        android:layout_width="@dimen/unit_20"
+        android:layout_height="@dimen/unit_20"
+        android:layout_below="@+id/tv_day"
+        android:src="@mipmap/ic_launcher"
+     />
+
+    <TextView
+        android:id="@+id/tv_max_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:layout_below="@id/iv_weather"
+        android:text="37"/>
+
+    <TextView
+        android:id="@+id/tv_min_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="27"
+        android:layout_alignBaseline="@+id/tv_max_temp"
+        android:layout_toRightOf="@+id/tv_max_temp"/>
+
+
+
+</RelativeLayout>

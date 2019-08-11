@@ -18,6 +18,8 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.example.testsubmission.network.api.EndPoints.WEATHER_URL;
+
 /**
  */
 public class APIClient {
@@ -68,7 +70,7 @@ public class APIClient {
             OkHttpClient client = builder.build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl(APIConstants.BASE_URL)
+                    .baseUrl(WEATHER_URL)
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

@@ -8,4 +8,25 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="WeatherTextViewBold">
+        <item name="android:textColor">@color/weather_text_view_bold_color</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="WeatherTextViewLight">
+        <item name="android:textColor">@color/weather_text_view_light_color</item>
+
+
+    </style>
+
+
+    <style name="RestaurantTextViewBlack">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textStyle">bold</item>
+
+
+    </style>
+
+
 </resources>

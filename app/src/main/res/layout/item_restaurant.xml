@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/unit_150">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/unit_10"
+        android:layout_marginTop="@dimen/unit_12"
+        android:layout_marginRight="@dimen/unit_10"
+        android:layout_marginBottom="@dimen/unit_12">
+
+        <ImageView
+            android:id="@+id/iv_restaurant"
+            android:layout_width="@dimen/unit_100"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_restaurant_name"
+            style="@style/RestaurantTextViewBlack"
+            android:layout_width="@dimen/unit_180"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/unit_12"
+            android:layout_marginTop="@dimen/unit_8"
+            android:layout_toRightOf="@+id/iv_restaurant"
+            android:text="Bazerkhan Labanese Restaurant" />
+
+        <ImageView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_restaurant_name"
+            android:layout_alignLeft="@+id/tv_restaurant_name"
+            android:layout_marginTop="@dimen/unit_16"
+            android:src="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/tv_restaurant_location"
+            style="@style/RestaurantTextViewBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_restaurant_name"
+            android:layout_alignBottom="@+id/location"
+            android:layout_marginLeft="@dimen/unit_12"
+            android:layout_toRightOf="@+id/location"
+            android:layout_marginTop="@dimen/unit_16"
+
+            android:gravity="center"
+            android:text="Dubai" />
+
+
+        <ImageView
+            android:id="@+id/meat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_restaurant_name"
+            android:layout_marginLeft="@dimen/unit_12"
+            android:layout_marginTop="@dimen/unit_16"
+
+            android:layout_toRightOf="@+id/tv_restaurant_location"
+            android:src="@drawable/ic_restaurant" />
+
+        <TextView
+            android:id="@+id/tv_restaurant_food"
+            style="@style/RestaurantTextViewBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_restaurant_name"
+            android:layout_alignBottom="@+id/meat"
+            android:layout_marginLeft="@dimen/unit_12"
+            android:layout_marginTop="@dimen/unit_16"
+
+            android:layout_toRightOf="@+id/meat"
+            android:gravity="center"
+            android:text="Labanese" />
+
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.8"
+            android:textColor="@android:color/holo_orange_light"
+            android:layout_below="@id/location"
+            android:layout_marginTop="@dimen/unit_8"
+            android:layout_alignLeft="@+id/location"/>
+
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_width="@dimen/unit_80"
+            android:layout_height="@dimen/unit_20"
+            android:layout_toRightOf="@+id/tv_rating"
+            android:layout_below="@id/location"
+            android:layout_marginTop="@dimen/unit_8"
+            android:layout_marginLeft="@dimen/unit_12"/>
+
+        <TextView
+            android:id="@+id/tv_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_toRightOf="@id/rating"
+            android:layout_below="@+id/location"
+            android:layout_marginLeft="@dimen/unit_12"
+            android:layout_marginTop="@dimen/unit_8"
+            android:text="96 reviews"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

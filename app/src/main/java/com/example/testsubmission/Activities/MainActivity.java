@@ -68,9 +68,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_restaurant_info:
+                gotoActivity(NearestRestaurantActivity.class);
                 break;
 
             case R.id.bt_weather_info:
+                gotoActivity(WeatherUpdateActivity.class);
+
                 break;
         }
     }

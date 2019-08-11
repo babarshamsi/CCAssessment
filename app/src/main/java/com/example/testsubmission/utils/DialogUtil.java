@@ -2,9 +2,11 @@ package com.example.testsubmission.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 import com.example.testsubmission.R;
 
@@ -73,5 +75,9 @@ public class DialogUtil {
 
     }
 
+    //showing toast
+    public static void showToast(Context context,String mesaage){
+        Toast.makeText(context,mesaage,Toast.LENGTH_SHORT).show();
+    }
 
 }
