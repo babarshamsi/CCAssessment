@@ -21,7 +21,6 @@ public class WeatherRH extends BaseRH<WeatherForcastResponse> {
 
     @Override
     protected void onFailure(Class<?> response) {
-        int i =0;
 //weatherUpdateCallback.onWeatherUpdateFailure(response);
     }
 }

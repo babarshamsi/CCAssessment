@@ -3,6 +3,7 @@ package com.example.testsubmission.utils;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
@@ -10,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 
 import com.example.testsubmission.Activities.BaseActivity;
 import com.example.testsubmission.R;
+import com.example.testsubmission.location.GeoAPIClientLayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,7 @@ import java.util.List;
 public class PermissionsUtil {
 
 
-    public static final int PERMISSIONS_REQUEST_LOCATION = 100;
+    public static int PERMISSIONS_REQUEST_LOCATION = 100;
 
 
     public static boolean checkAndRequestPermissions(Activity mActivity, String[] permissionList, final int requestCode) {
@@ -90,9 +92,6 @@ public class PermissionsUtil {
             DialogUtil.showAlertMessage(activity,activity.getString(R.string.internet_connection_title),activity.getString(R.string.no_internet_connection), activity.getString(R.string.ok));
             return false;
         }
-//        else if(!_isWritePermissionEnabled()) {
-//            return false;
-//        }
         else {
             return true;
         }
@@ -152,30 +151,9 @@ public class PermissionsUtil {
         }
     }
 
-    public static boolean checkCameraPermission(Activity mActivity) {
-
-        if (ContextCompat.checkSelfPermission(mActivity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-
-            // Asking user if explanation is needed
-            if (ActivityCompat.shouldShowRequestPermissionRationale(mActivity, Manifest.permission.CAMERA)) {
-
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-
-                //Prompt the user once explanation has been shown
-                ActivityCompat.requestPermissions(mActivity, new String[]{Manifest.permission.CAMERA}, PERMISSIONS_REQUEST_LOCATION);
 
 
-            } else {
-                // No explanation needed, we can request the permission.
-                ActivityCompat.requestPermissions(mActivity, new String[]{Manifest.permission.CAMERA}, PERMISSIONS_REQUEST_LOCATION);
-            }
-            return false;
-        } else {
-            return true;
-        }
-    }
+
 
 
 

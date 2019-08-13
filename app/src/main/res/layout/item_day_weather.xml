@@ -3,31 +3,43 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/unit_100"
     android:layout_height="@dimen/unit_100"
-    android:gravity="center" >
+     >
 
     <TextView
         android:id="@+id/tv_day"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mon"
         android:textAllCaps="true"
         android:maxLength="3"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="@color/colorBlack"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/unit_8"/>
 
     <ImageView
         android:id="@+id/iv_weather"
-        android:layout_width="@dimen/unit_20"
-        android:layout_height="@dimen/unit_20"
+        android:layout_width="@dimen/unit_40"
+        android:layout_height="@dimen/unit_40"
         android:layout_below="@+id/tv_day"
-        android:src="@mipmap/ic_launcher"
+        android:layout_centerHorizontal="true"
+
      />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@id/iv_weather"
+        >
 
     <TextView
         android:id="@+id/tv_max_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorBlack"
-        android:layout_below="@id/iv_weather"
         android:text="37"/>
 
     <TextView
@@ -35,9 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="27"
-        android:layout_alignBaseline="@+id/tv_max_temp"
-        android:layout_toRightOf="@+id/tv_max_temp"/>
 
-
+        />
+    </LinearLayout>
 
 </RelativeLayout>

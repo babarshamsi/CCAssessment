@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">TestSubmission</string>
+    <string name="app_name">CCAssessment</string>
     <string name="ok">Okay</string>
-    <string name="enable_location">please enable your location</string>
+    <string name="enable_location">Enable Location</string>
     <string name="gps_not_enabled">your GPS not enabled</string>
     <string name="next">Next</string>
     <string name="no_internet_connection">No Internet Available</string>
@@ -11,4 +11,8 @@
     <string name="humidity">Humidity</string>
     <string name="Wind">Wind</string>
     <string name="no_internet">No internet connection</string>
+    <string name="nearby_restaurant">Nearby Restaurant</string>
+    <string name="enable_location_message">Please Enable Location to use this App</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="later">Later</string>
 </resources>

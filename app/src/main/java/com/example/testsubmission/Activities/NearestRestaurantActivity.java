@@ -3,6 +3,7 @@ package com.example.testsubmission.Activities;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.example.testsubmission.R;
@@ -38,6 +39,8 @@ public class NearestRestaurantActivity extends BaseActivity implements Restauran
         super.init(savedInstanceState);
         ButterKnife.bind(this);
 
+        getSupportActionBar().setTitle(R.string.nearby_restaurant);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         sharedPreferenceManager = SharedPreferenceManager.getInstance(this);
 
         String url = restaurantApiBaseUrl + "key=" + RESTAURANT_GOOGLE_API_KEYS
@@ -63,14 +66,22 @@ public class NearestRestaurantActivity extends BaseActivity implements Restauran
 
     @Override
     public void onClick(View view) {
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
     }
 
     @Override
     public void onRestaurantUpdateSuccess(RestaurantResponse restaurantResponse) {
         ProgressBarUtil.hideSpinnerProgressDialog();
         if (restaurantResponse != null) {
-
             setUpRecylerView((ArrayList<Result>) restaurantResponse.results);
         }
     }

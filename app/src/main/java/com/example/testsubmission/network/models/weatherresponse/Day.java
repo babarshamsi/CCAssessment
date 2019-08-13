@@ -37,13 +37,13 @@ private Double totalprecipMm;
 private Double totalprecipIn;
 @SerializedName("avgvis_km")
 @Expose
-private Integer avgvisKm;
+private Double avgvisKm;
 @SerializedName("avgvis_miles")
 @Expose
-private Integer avgvisMiles;
+private Double avgvisMiles;
 @SerializedName("avghumidity")
 @Expose
-private Integer avghumidity;
+private Double avghumidity;
 @SerializedName("condition")
 @Expose
 private Condition condition;
@@ -131,27 +131,27 @@ public void setTotalprecipIn(Double totalprecipIn) {
 this.totalprecipIn = totalprecipIn;
 }
 
-public Integer getAvgvisKm() {
+public Double getAvgvisKm() {
 return avgvisKm;
 }
 
-public void setAvgvisKm(Integer avgvisKm) {
+public void setAvgvisKm(Double avgvisKm) {
 this.avgvisKm = avgvisKm;
 }
 
-public Integer getAvgvisMiles() {
+public Double getAvgvisMiles() {
 return avgvisMiles;
 }
 
-public void setAvgvisMiles(Integer avgvisMiles) {
+public void setAvgvisMiles(Double avgvisMiles) {
 this.avgvisMiles = avgvisMiles;
 }
 
-public Integer getAvghumidity() {
+public Double getAvghumidity() {
 return avghumidity;
 }
 
-public void setAvghumidity(Integer avghumidity) {
+public void setAvghumidity(Double avghumidity) {
 this.avghumidity = avghumidity;
 }
 

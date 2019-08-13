@@ -54,6 +54,7 @@ public class GeoAPIClientLayer implements GoogleApiClient.ConnectionCallbacks, G
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,mLocationRequest, mActivity);
         }
 
+
     }
 
     @Override
@@ -61,9 +62,6 @@ public class GeoAPIClientLayer implements GoogleApiClient.ConnectionCallbacks, G
 
     }
 
-//    public void stopLocationUpdates(){
-//        LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, mActivity);
-//    }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {

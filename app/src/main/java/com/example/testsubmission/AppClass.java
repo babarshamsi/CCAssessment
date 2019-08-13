@@ -17,7 +17,6 @@ public class AppClass extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-//        MultiDex.install(this);
         appClass = this;
     }
 

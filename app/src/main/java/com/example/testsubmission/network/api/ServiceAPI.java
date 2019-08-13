@@ -16,10 +16,6 @@ import static com.example.testsubmission.network.api.EndPoints.WEATHER_URL;
 public interface ServiceAPI {
 
 
-//    @GET(WEATHER_URL)
-//    Call<WeatherForcastResponse> getWeatherUpdate(@Query("key") String key,
-//                                                  @Query("q") LatLng latLng,
-//                                                  @Query("days") int days);
     @GET
     Call<WeatherForcastResponse> getWeatherUpdate(@Url String utl);
 

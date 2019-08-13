@@ -9,8 +9,6 @@ import com.example.testsubmission.network.handlers.RestaurantRH;
 import com.example.testsubmission.network.handlers.WeatherRH;
 import com.example.testsubmission.network.handlers.callbacks.RestaurantUpdateCallback;
 import com.example.testsubmission.network.handlers.callbacks.WeatherUpdateCallback;
-import com.example.testsubmission.network.models.request.WeatherRequest;
-import com.google.android.gms.maps.model.LatLng;
 
 
 public class AppStore implements IOnConnectionTimeoutListener {
@@ -28,9 +26,6 @@ public class AppStore implements IOnConnectionTimeoutListener {
             return appStore;
     }
 
-//    public void getWeatherUpdates(String keys, LatLng latLng,int days, WeatherUpdateCallback weatherUpdateCallback){
-//        serviceAPI.getWeatherUpdate(keys,latLng,days).enqueue(new WeatherRH(weatherUpdateCallback));
-//    }
     public void getWeatherUpdates(String url, WeatherUpdateCallback weatherUpdateCallback){
         serviceAPI.getWeatherUpdate(url).enqueue(new WeatherRH(weatherUpdateCallback));
     }

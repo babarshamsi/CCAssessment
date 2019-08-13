@@ -9,17 +9,17 @@ public class DateFormatter {
     public static String getFullDayName(String date){
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-        Date myDate = null;
+        Date newDate = null;
         try {
-            myDate = dateFormat.parse(date);
+            newDate = dateFormat.parse(date);
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-        if (myDate != null) {
+        if (newDate != null) {
             SimpleDateFormat sm = new SimpleDateFormat("EEEE");
-            date = sm.format(myDate);
+            date = sm.format(newDate);
         }
         return date ;
     }
@@ -27,17 +27,17 @@ public class DateFormatter {
     public static String getShortDayName(String date){
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-        Date myDate = null;
+        Date newDate = null;
         try {
-            myDate = dateFormat.parse(date);
+            newDate = dateFormat.parse(date);
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-        if (myDate != null) {
+        if (newDate != null) {
             SimpleDateFormat sm = new SimpleDateFormat("EEE");
-            date = sm.format(myDate);
+            date = sm.format(newDate);
         }
         return date ;
     }

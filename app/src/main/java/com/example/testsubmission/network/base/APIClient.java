@@ -20,8 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.example.testsubmission.network.api.EndPoints.WEATHER_URL;
 
-/**
- */
+
 public class APIClient {
 
     private static Retrofit retrofit = null;

@@ -38,9 +38,10 @@ public class WeatherUpdateAdapter extends RecyclerView.Adapter<WeatherVH> {
     public void onBindViewHolder(WeatherVH holder, int position) {
         Forecastday forecastday = forecastdays.get(position);
         holder.tv_day.setText(DateFormatter.getShortDayName(forecastday.getDate()));
-        holder.tv_max_temp.setText(forecastday.getDay().getMaxtempC().toString());
-        holder.tv_min_temp.setText(forecastday.getDay().getMintempC().toString());
-        Glide.with(context).load(forecastday.getDay().getCondition().getIcon());
+        holder.tv_max_temp.setText(String.valueOf(Math.round(forecastday.getDay().getMaxtempC()))+"°");
+        holder.tv_min_temp.setText(String.valueOf(Math.round(forecastday.getDay().getMintempC())));
+        Glide.with(context).load("https://"+forecastday.getDay().getCondition().getIcon()).
+                into(holder.iv_weather);
     }
 
     @Override

@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide;
 import com.example.testsubmission.R;
 import com.example.testsubmission.network.models.restaurantResponse.Result;
 import com.example.testsubmission.viewholders.RestaurantVH;
-import com.example.testsubmission.viewholders.WeatherVH;
 
 import java.util.ArrayList;
 
@@ -41,9 +40,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantVH> {
         holder.tv_restaurant_name.setText(restaurantResult.name);
         holder.tv_restaurant_location.setText(restaurantResult.vicinity);
         holder.tv_restaurant_food.setText(restaurantResult.scope);
-        holder.tv_rating.setText(restaurantResult.rating.toString());
-        holder.tv_reviews.setText(restaurantResult.userRatingsTotal + " Reviews");
-        holder.rating.setNumStars(restaurantResult.rating.intValue());
+        holder.tv_rating.setText(restaurantResult.rating != null?restaurantResult.rating.toString():"0");
+        holder.tv_reviews.setText(restaurantResult.userRatingsTotal!=null?restaurantResult.userRatingsTotal + " Reviews":"0 Reviews");
+        holder.rating.setRating(restaurantResult.rating!=null?restaurantResult.rating.intValue():0 );
         Glide.with(context).load(restaurantResult.icon).into(holder.iv_restaurant);
     }
 

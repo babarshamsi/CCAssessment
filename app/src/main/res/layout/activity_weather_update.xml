@@ -1,162 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".Activities.WeatherUpdateActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/unit_600"
-        android:background="@color/weather_view_bg"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/unit_40">
-
-            <TextView
-                android:id="@+id/tv_city_name"
-                style="@style/WeatherTextViewBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dubai"
-                android:textSize="@dimen/unit_28" />
-
-            <TextView
-                android:id="@+id/tv_day"
-                style="@style/WeatherTextViewLight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_city_name"
-                android:text="Sunday"
-                android:textSize="@dimen/unit_24" />
-
-            <TextView
-                android:id="@+id/tv_weather_condition"
-                style="@style/WeatherTextViewLight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_day"
-                android:text="Clear with perodic clouds"
-                android:textSize="@dimen/unit_22" />
-
-            <Button
-                android:id="@+id/bt_restaurant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/button_with_background_rounded_corners"
-                android:padding="@dimen/unit_4"
-                android:text="@string/popular_restaurants"
-                android:textAllCaps="true"
-                android:textColor="@color/colorWhite" />
-
-
-            <ImageView
-                android:id="@+id/iv_current_weather"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true" />
-
-            <TextView
-                android:id="@+id/tv_current_temp"
-                style="@style/WeatherTextViewBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="37"
-
-                android:textSize="@dimen/unit_40" />
-
-
-            <TextView
-                android:id="@+id/tv_precipitation"
-                style="@style/WeatherTextViewBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/precipitation"
-                android:layout_alignLeft="@+id/precipitation"
-                android:layout_alignRight="@+id/precipitation"
-                android:gravity="center"
-                android:text="10%" />
-
-            <TextView
-                android:id="@+id/precipitation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/unit_10"
-                android:text="@string/precipitation"
-                android:layout_alignParentBottom="true"
-                style="@style/WeatherTextViewLight"/>
-
-
-
-
-
-            <TextView
-                android:id="@+id/tv_humidity"
-                style="@style/WeatherTextViewBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/humidity"
-                android:layout_alignLeft="@+id/humidity"
-                android:layout_alignRight="@+id/humidity"
-                android:gravity="center"
-                android:text="34%" />
-
-            <TextView
-                android:id="@+id/humidity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/unit_10"
-                android:text="@string/humidity"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                style="@style/WeatherTextViewLight"/>
-
-
-
-
-            <TextView
-                android:id="@+id/tv_wind_speed"
-                style="@style/WeatherTextViewBold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/windspeed"
-                android:layout_alignLeft="@+id/windspeed"
-                android:layout_alignRight="@+id/windspeed"
-                android:gravity="center"
-
-                android:text="29km/h" />
-
-            <TextView
-                android:id="@+id/windspeed"
-                android:layout_width="@dimen/unit_60"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/unit_10"
-                android:text="@string/Wind"
-                android:gravity="center"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                style="@style/WeatherTextViewLight"/>
-
-
-        </RelativeLayout>
-    </LinearLayout>
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_weather_updates"
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rootView">
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:background="@color/weather_view_bg"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/unit_20">
+
+                <TextView
+                    android:id="@+id/tv_city_name"
+                    style="@style/WeatherTextViewBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/unit_24sp" />
+
+                <TextView
+                    android:id="@+id/tv_day"
+                    style="@style/WeatherTextViewLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_city_name"
+
+                    android:textSize="@dimen/unit_20" />
+
+                <TextView
+                    android:id="@+id/tv_weather_condition"
+                    style="@style/WeatherTextViewLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_day"
+                    android:textSize="@dimen/unit_18sp" />
+
+                <Button
+                    android:id="@+id/bt_restaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/unit_10"
+                    android:background="@drawable/button_with_background_rounded_corners"
+                    android:text="@string/popular_restaurants"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/unit_12"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    >
 
 
-    </android.support.v7.widget.RecyclerView>
+
+                    <ImageView
+                        android:id="@+id/iv_current_weather"
+                        android:layout_width="@dimen/unit_80"
+                        android:layout_height="@dimen/unit_80"
+                        android:layout_gravity="right" />
+
+                    <TextView
+                        android:id="@+id/tv_current_temp"
+                        style="@style/WeatherTextViewBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="@dimen/unit_40" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_precipitation"
+                    style="@style/WeatherTextViewBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/precipitation"
+                    android:layout_alignLeft="@+id/precipitation"
+                    android:layout_alignRight="@+id/precipitation"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/precipitation"
+                    style="@style/WeatherTextViewLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/unit_10"
+                    android:text="@string/precipitation" />
 
 
+                <TextView
+                    android:id="@+id/tv_humidity"
+                    style="@style/WeatherTextViewBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/humidity"
+                    android:layout_alignLeft="@+id/humidity"
+                    android:layout_alignRight="@+id/humidity"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/humidity"
+                    style="@style/WeatherTextViewLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/unit_10"
+                    android:text="@string/humidity" />
+
+
+                <TextView
+                    android:id="@+id/tv_wind_speed"
+                    style="@style/WeatherTextViewBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/windspeed"
+                    android:layout_alignLeft="@+id/windspeed"
+                    android:layout_alignRight="@+id/windspeed"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/windspeed"
+                    style="@style/WeatherTextViewLight"
+                    android:layout_width="@dimen/unit_60"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/unit_10"
+                    android:gravity="center"
+                    android:text="@string/Wind" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_weather_updates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rootView"
+            android:weightSum="0.1"></android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
 </LinearLayout>

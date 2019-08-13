@@ -2,9 +2,6 @@ package com.example.testsubmission.utils;
 
 import java.io.IOException;
 
-/**
- * Created by subhan on 11/22/18.
- */
 
 public class NoInternetConnectivityException extends IOException {
     @Override

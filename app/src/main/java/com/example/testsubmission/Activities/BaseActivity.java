@@ -86,13 +86,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         this.gotoActivity(activity, false, new Bundle());
     }
 
-    public final void gotoActivity(final Class<?> activity, final boolean finish){
-        this.gotoActivity(activity, finish, new Bundle());
-    }
-
-    public final void gotoActivity(final Class<?> activity, final Bundle bundle){
-        this.gotoActivity(activity, false, bundle);
-    }
 
     public final void gotoActivity(final Class<?> activity, final boolean finish, final Bundle bundle){
 
@@ -103,11 +96,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if(finish) finish();
     }
 
-    public final void resetToMainActivity(final Class<?> activity){
-        Intent intent = new Intent(getApplicationContext(), activity);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
 
     //////////////////////////////////////////
     // ABSTRACT FUNCTIONS
@@ -119,12 +107,12 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         Toast.makeText(this,mesaage,Toast.LENGTH_SHORT).show();
     }
     public static void showAlertMessageForEnableLocation(final Activity mActivity,
-                                                         String message, final String content, String positiveLabel, String negativeLabel,
+                                                         String title, final String message, String positiveLabel, String negativeLabel,
                                                          DialogInterface.OnClickListener clickListener) {
         AlertDialog dialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity)
-                .setTitle(message)
-                .setMessage(content)
+                .setTitle(title)
+                .setMessage(message)
                 .setCancelable(false)
                 .setPositiveButton(positiveLabel, clickListener)
                 .setNegativeButton(negativeLabel, clickListener)

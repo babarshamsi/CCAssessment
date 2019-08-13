@@ -25,10 +25,10 @@ private Integer isDay;
 private Condition condition;
 @SerializedName("wind_mph")
 @Expose
-private Integer windMph;
+private Double windMph;
 @SerializedName("wind_kph")
 @Expose
-private Integer windKph;
+private Double windKph;
 @SerializedName("wind_degree")
 @Expose
 private Integer windDegree;
@@ -61,10 +61,10 @@ private Double feelslikeC;
 private Double feelslikeF;
 @SerializedName("vis_km")
 @Expose
-private Integer visKm;
+private Double visKm;
 @SerializedName("vis_miles")
 @Expose
-private Integer visMiles;
+private Double visMiles;
 @SerializedName("uv")
 @Expose
 private Integer uv;
@@ -123,19 +123,19 @@ public void setCondition(Condition condition) {
 this.condition = condition;
 }
 
-public Integer getWindMph() {
+public Double getWindMph() {
 return windMph;
 }
 
-public void setWindMph(Integer windMph) {
+public void setWindMph(Double windMph) {
 this.windMph = windMph;
 }
 
-public Integer getWindKph() {
+public Double getWindKph() {
 return windKph;
 }
 
-public void setWindKph(Integer windKph) {
+public void setWindKph(Double windKph) {
 this.windKph = windKph;
 }
 
@@ -219,19 +219,19 @@ public void setFeelslikeF(Double feelslikeF) {
 this.feelslikeF = feelslikeF;
 }
 
-public Integer getVisKm() {
+public Double getVisKm() {
 return visKm;
 }
 
-public void setVisKm(Integer visKm) {
+public void setVisKm(Double visKm) {
 this.visKm = visKm;
 }
 
-public Integer getVisMiles() {
+public Double getVisMiles() {
 return visMiles;
 }
 
-public void setVisMiles(Integer visMiles) {
+public void setVisMiles(Double visMiles) {
 this.visMiles = visMiles;
 }
 

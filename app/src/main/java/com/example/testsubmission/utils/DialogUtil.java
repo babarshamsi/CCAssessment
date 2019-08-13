@@ -23,8 +23,6 @@ public class DialogUtil {
                     }
                 }).setCancelable(false);
 
-
-//        MaterialDialog dialog = builder.build();
         builder.show();
 
     }
@@ -41,9 +39,6 @@ public class DialogUtil {
                         showAlertMessage(context, internetMessage, internetContent, context.getString(R.string.ok));
                     }
                 });
-
-
-//        MaterialDialog dialog = builder.build();
         builder.show();
 
     }
@@ -73,11 +68,6 @@ public class DialogUtil {
 
         builder.show();
 
-    }
-
-    //showing toast
-    public static void showToast(Context context,String mesaage){
-        Toast.makeText(context,mesaage,Toast.LENGTH_SHORT).show();
     }
 
 }

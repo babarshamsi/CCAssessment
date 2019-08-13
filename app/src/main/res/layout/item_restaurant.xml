@@ -43,10 +43,10 @@
             android:layout_below="@+id/tv_restaurant_name"
             android:layout_alignBottom="@+id/location"
             android:layout_marginLeft="@dimen/unit_12"
-            android:layout_toRightOf="@+id/location"
             android:layout_marginTop="@dimen/unit_16"
-
+            android:layout_toRightOf="@+id/location"
             android:gravity="center"
+            android:singleLine="true"
             android:text="Dubai" />
 
 
@@ -57,9 +57,9 @@
             android:layout_below="@+id/tv_restaurant_name"
             android:layout_marginLeft="@dimen/unit_12"
             android:layout_marginTop="@dimen/unit_16"
-
             android:layout_toRightOf="@+id/tv_restaurant_location"
-            android:src="@drawable/ic_restaurant" />
+            android:src="@drawable/ic_restaurant"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_restaurant_food"
@@ -70,42 +70,54 @@
             android:layout_alignBottom="@+id/meat"
             android:layout_marginLeft="@dimen/unit_12"
             android:layout_marginTop="@dimen/unit_16"
-
             android:layout_toRightOf="@+id/meat"
             android:gravity="center"
-            android:text="Labanese" />
+            android:text="Labanese"
+            android:visibility="gone" />
 
-        <TextView
-            android:id="@+id/tv_rating"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3.8"
-            android:textColor="@android:color/holo_orange_light"
-            android:layout_below="@id/location"
-            android:layout_marginTop="@dimen/unit_8"
-            android:layout_alignLeft="@+id/location"/>
-
-        <RatingBar
-            android:id="@+id/rating"
-            android:layout_width="@dimen/unit_80"
-            android:layout_height="@dimen/unit_20"
-            android:layout_toRightOf="@+id/tv_rating"
-            android:layout_below="@id/location"
-            android:layout_marginTop="@dimen/unit_8"
-            android:layout_marginLeft="@dimen/unit_12"/>
-
-        <TextView
-            android:id="@+id/tv_reviews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_blue_light"
-            android:layout_toRightOf="@id/rating"
             android:layout_below="@+id/location"
-            android:layout_marginLeft="@dimen/unit_12"
-            android:layout_marginTop="@dimen/unit_8"
-            android:text="96 reviews"/>
+            android:layout_alignLeft="@+id/location"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/unit_4"
+                android:text="3.8"
+
+                android:textColor="@android:color/holo_orange_light" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="@style/RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/unit_20"
+                android:layout_alignBottom="@+id/tv_rating"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/unit_8"
+                android:layout_marginTop="@dimen/unit_8"
+                android:layout_toRightOf="@+id/tv_rating"
+                android:isIndicator="true"
+                android:numStars="5"
 
 
+                android:stepSize="1" />
+
+            <TextView
+                android:id="@+id/tv_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/unit_12"
+                android:layout_marginTop="@dimen/unit_4"
+                android:layout_toRightOf="@id/rating"
+                android:text="96 reviews"
+                android:textColor="@android:color/holo_blue_light" />
+
+        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>

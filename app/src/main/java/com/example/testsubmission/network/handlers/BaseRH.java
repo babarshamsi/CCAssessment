@@ -1,15 +1,10 @@
 package com.example.testsubmission.network.handlers;
 
 
-import org.json.JSONObject;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by subhan on 11/25/18.
- */
 
 public abstract class BaseRH<T> implements Callback<T> {
 

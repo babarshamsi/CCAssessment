@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.testsubmission.R;
 import com.example.testsubmission.adapters.WeatherUpdateAdapter;
 import com.example.testsubmission.managers.SharedPreferenceManager;
@@ -65,6 +66,7 @@ public class WeatherUpdateActivity extends BaseActivity implements WeatherUpdate
         super.init(savedInstanceState);
         ButterKnife.bind(this);
         attachClickListener(R.id.bt_restaurant);
+        getSupportActionBar().hide();
         sharedPreferenceManager = SharedPreferenceManager.getInstance(this);
 
         String url = weatherApiBaseUrl + "key=" + WEATHER_API_KEYS
@@ -73,12 +75,8 @@ public class WeatherUpdateActivity extends BaseActivity implements WeatherUpdate
                 + sharedPreferenceManager.getLongitude() +
                 "&days=5";
 
-        LatLng latLng = new LatLng(sharedPreferenceManager.getLatitude(),
-                sharedPreferenceManager.getLongitude());
         ProgressBarUtil.showSpinnerProgressDialog(this);
         AppStore.getInstance().getWeatherUpdates(url, this);
-//        AppStore.getInstance().getWeatherUpdates(WEATHER_API_KEYS,latLng,
-//                5, this);
     }
 
     @Override
@@ -90,7 +88,7 @@ public class WeatherUpdateActivity extends BaseActivity implements WeatherUpdate
     private void setUpRecylerView(ArrayList<Forecastday> list) {
         if (list.size() > 0) {
             weatherUpdateAdapter = new WeatherUpdateAdapter(list, this);
-            rv_weather_updates.setLayoutManager(new LinearLayoutManager(this));
+            rv_weather_updates.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
             rv_weather_updates.setAdapter(weatherUpdateAdapter);
         }
     }
@@ -99,10 +97,11 @@ public class WeatherUpdateActivity extends BaseActivity implements WeatherUpdate
         tv_city_name.setText(weatherForcastResponse.getLocation().getName());
         tv_day.setText(DateFormatter.getFullDayName(weatherForcastResponse.getLocation().getLocaltime()));
         tv_weather_condition.setText(weatherForcastResponse.getCurrent().getCondition().getText());
-        tv_current_temp.setText(weatherForcastResponse.getCurrent().getTempC().toString());
-        tv_precipitation.setText(String.valueOf(Math.round(weatherForcastResponse.getCurrent().getPrecipIn())));
-        tv_humidity.setText(weatherForcastResponse.getCurrent().getHumidity().toString());
-        tv_wind_speed.setText(weatherForcastResponse.getCurrent().getWindKph().toString());
+        tv_current_temp.setText(weatherForcastResponse.getCurrent().getTempC().toString()+"°C");
+        tv_precipitation.setText(String.valueOf(Math.round(weatherForcastResponse.getCurrent().getPrecipMm() * 100))+"%");
+        tv_humidity.setText(weatherForcastResponse.getCurrent().getHumidity().toString() + "%");
+        tv_wind_speed.setText(String.valueOf(Math.round(weatherForcastResponse.getCurrent().getGustMph())) + "Km/h");
+        Glide.with(this).load("https:"+weatherForcastResponse.getCurrent().getCondition().getIcon()).into(iv_current_weather);
     }
 
 
